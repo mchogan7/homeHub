@@ -11,7 +11,7 @@ client.connect();
 
 app.get("/", (req, res) => {
   client.query("SELECT NOW()", (err, response) => {
-    console.log(err, response);
+    console.log(err, response + 'test');
     res.send(response.rows[0]);
     client.end();
   });
