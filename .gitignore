@@ -14,7 +14,7 @@
 
 
 # misc
-.config.js
+config.js
 .DS_Store
 .env.local
 .env.development.local
