@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
-import Provider from './Provider.js'
-import {AppContext} from './Provider.js'
+import DeviceProvider from './DeviceProvider.js'
+import {DeviceContext} from './DeviceProvider.js'
 
 
  class App extends Component {
   render() {
     return (
-      <Provider>
+      <DeviceProvider>
         <Company />           
-      </Provider>
+      </DeviceProvider>
     );
   }
 }
 
-const Company = (props) => {
+const Company = () => {
   return (
-    <AppContext.Consumer>
-      {(context) => (
-        <p>{context.number}</p>
+    <DeviceContext.Consumer>
+      {(DeviceContext) => (
+      DeviceContext.data &&
+      DeviceContext.data.map((devices) =>
+      <p key={devices.deviceID}>{devices.deviceName}</p>
+      )
       )}
-    </AppContext.Consumer>
+  
+    </DeviceContext.Consumer>
   );
 }
 
