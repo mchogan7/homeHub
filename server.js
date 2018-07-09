@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
 app.post("/logDeviceStatus", (req, res) => {
     console.log('status here!')
      console.log(req.body)
-    res.send('got it!')
+    res.send('got it!!!')
 });
 
 app.post("/getAllDevices", (req, res) => {
